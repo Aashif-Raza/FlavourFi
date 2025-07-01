@@ -4,7 +4,7 @@ const NutritionInfo = ({ recipeId, recipeTitle }) => {
   const [nutrition, setNutrition] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  dotenv.config();
+  // dotenv.config();
   const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {

@@ -6,7 +6,7 @@ const RecipeModal = ({ recipeId, onClose }) => {
   const [recipe, setRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  dotenv.config();
+  // dotenv.config();
   const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {

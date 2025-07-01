@@ -15,7 +15,7 @@ const RecipeDetail = () => {
   const [showShoppingList, setShowShoppingList] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  dotenv.config();
+  // dotenv.config();
   const apiKey = import.meta.env.VITE_API_KEY;
   
   // Refs for smooth scrolling
@@ -111,12 +111,11 @@ const RecipeDetail = () => {
       <DarkModeToggle />
       
       {/* Navigation Quick Links - Fixed Position */}
-      <div className="fixed top-20 right-4 z-30 space-y-2">
+      <div className="fixed top-20 left-4 z-30 flex flex-col space-y-2">
         <button
           onClick={() => smoothScrollTo(ingredientsRef)}
           className="p-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-full shadow-lg hover:scale-110 transition-all duration-300 text-sm font-medium"
           title="Ingredients"
-          disabled={isScrolling}
         >
           📋
         </button>
@@ -124,7 +123,6 @@ const RecipeDetail = () => {
           onClick={() => smoothScrollTo(instructionsRef)}
           className="p-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-full shadow-lg hover:scale-110 transition-all duration-300 text-sm font-medium"
           title="Instructions"
-          disabled={isScrolling}
         >
           👨‍🍳
         </button>
@@ -132,7 +130,6 @@ const RecipeDetail = () => {
           onClick={() => smoothScrollTo(nutritionRef)}
           className="p-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-full shadow-lg hover:scale-110 transition-all duration-300 text-sm font-medium"
           title="Nutrition"
-          disabled={isScrolling}
         >
           📊
         </button>
@@ -140,7 +137,6 @@ const RecipeDetail = () => {
           onClick={() => smoothScrollTo(ratingRef)}
           className="p-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-full shadow-lg hover:scale-110 transition-all duration-300 text-sm font-medium"
           title="Rating & Reviews"
-          disabled={isScrolling}
         >
           ⭐
         </button>
@@ -148,7 +144,6 @@ const RecipeDetail = () => {
           onClick={() => smoothScrollTo(additionalInfoRef)}
           className="p-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur rounded-full shadow-lg hover:scale-110 transition-all duration-300 text-sm font-medium"
           title="Additional Info"
-          disabled={isScrolling}
         >
           ℹ️
         </button>
@@ -160,7 +155,6 @@ const RecipeDetail = () => {
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 z-30 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 hover:scale-110 transition-all duration-300"
           title="Scroll to top"
-          disabled={isScrolling}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
@@ -174,7 +168,6 @@ const RecipeDetail = () => {
           <button
             onClick={() => navigate(-1)}
             className="mr-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow"
-            disabled={isScrolling}
           >
             ← Back
           </button>
@@ -185,21 +178,18 @@ const RecipeDetail = () => {
             <button
               onClick={() => smoothScrollTo(ingredientsRef)}
               className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-sm rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
-              disabled={isScrolling}
             >
               📋 Ingredients
             </button>
             <button
               onClick={() => smoothScrollTo(instructionsRef)}
               className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-sm rounded-full hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors"
-              disabled={isScrolling}
             >
               👨‍🍳 Instructions
             </button>
             <button
               onClick={() => smoothScrollTo(nutritionRef)}
               className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 text-sm rounded-full hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors"
-              disabled={isScrolling}
             >
               📊 Nutrition
             </button>
@@ -235,14 +225,12 @@ const RecipeDetail = () => {
                   <button
                     onClick={() => setShowShoppingList(!showShoppingList)}
                     className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                    disabled={isScrolling}
                   >
                     🛒 Add to Shopping List
                   </button>
                   <button
                     onClick={() => window.print()}
                     className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
-                    disabled={isScrolling}
                   >
                     🖨️ Print Recipe
                   </button>

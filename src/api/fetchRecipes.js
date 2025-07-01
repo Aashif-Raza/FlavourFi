@@ -1,4 +1,3 @@
-dotenv.config();
 const API_KEY = import.meta.env.VITE_API_KEY; 
 // const API_KEY = '8512b72ca37948a388a0755756245b71'; 
 const BASE_URL = 'https://api.spoonacular.com/recipes/complexSearch';
