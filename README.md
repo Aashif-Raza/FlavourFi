@@ -1,3 +1,5 @@
+Deployed Link: https://flavourfi.netlify.app/
+
 # Recipe Finder App (FlavourFi)
 
 Discover, search, and save your favorite recipes with FlavourFi! This modern web app helps you find recipes tailored to your taste, ingredients, and lifestyle, with beautiful UI and advanced filtering.
