@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import Logo from '../assets/Brown_and_White_SImple_Modern_Professional_Catering_Logo-removebg-preview.png';
+import FacebookIcon from '../assets/icons8-facebook-500.svg';
+import TwitterIcon from '../assets/icons8-twitter-500.svg';
+import WhatsAppIcon from '../assets/icons8-whatsapp-500.svg';
+import GmailIcon from '../assets/icons8-gmail-500.svg';
+
 
 const RecipeShare = ({ recipe }) => {
   const [showShareOptions, setShowShareOptions] = useState(false);
@@ -11,8 +16,8 @@ const RecipeShare = ({ recipe }) => {
   const shareOptions = [
     {
       name: 'Facebook',
-      icon: '📘',
-      color: 'bg-blue-600 hover:bg-blue-700',
+      icon: <img src={FacebookIcon} alt="Facebook" />,
+      color: 'bg-blue-500 hover:bg-blue-700',
       action: () => {
         const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
         window.open(url, '_blank', 'width=600,height=400');
@@ -20,8 +25,8 @@ const RecipeShare = ({ recipe }) => {
     },
     {
       name: 'Twitter',
-      icon: '🐦',
-      color: 'bg-blue-400 hover:bg-blue-500',
+      icon: <img src={TwitterIcon} alt="Twitter" />,
+      color: 'bg-gray-500 hover:bg-gray-700',
       action: () => {
         const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
         window.open(url, '_blank', 'width=600,height=400');
@@ -29,16 +34,16 @@ const RecipeShare = ({ recipe }) => {
     },
     {
       name: 'WhatsApp',
-      icon: '💬',
+      icon: <img src={WhatsAppIcon} alt="WhatsApp" />,
       color: 'bg-green-500 hover:bg-green-600',
       action: () => {
         const url = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`;
-        window.open(url, '_blank');
+        window.open(url, '_blank', 'width=600,height=400');
       }
     },
     {
       name: 'Email',
-      icon: '📧',
+      icon: <img src={GmailIcon} alt="Email" />,
       color: 'bg-gray-600 hover:bg-gray-700',
       action: () => {
         const subject = `Recipe: ${recipe.title}`;
@@ -50,7 +55,7 @@ const RecipeShare = ({ recipe }) => {
     {
       name: 'Copy Link',
       icon: '🔗',
-      color: 'bg-purple-600 hover:bg-purple-700',
+      color: 'bg-purple-500 hover:bg-purple-700',
       action: async () => {
         try {
           await navigator.clipboard.writeText(shareUrl);

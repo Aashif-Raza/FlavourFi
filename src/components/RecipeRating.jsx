@@ -87,13 +87,13 @@ const RecipeRating = ({ recipeId, recipeTitle }) => {
           <div className="flex">
             {renderStars(Math.round(parseFloat(averageRating)))}
           </div>
-          <span className="text-sm text-gray-600">({allReviews.length} reviews)</span>
+          <span className="text-sm text-gray-600 ">({allReviews.length} reviews)</span>
         </div>
       </div>
 
       {/* User Rating Section */}
-      <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-        <h4 className="font-medium mb-2">Your Rating</h4>
+      <div className="mb-6 p-4 bg-gray-100 rounded-lg">
+        <h4 className="font-medium mb-2 text-black">Your Rating</h4>
         <div className="flex items-center gap-2 mb-3">
           {renderStars(userRating, true)}
           <span className="text-sm text-gray-600 ml-2">
@@ -104,13 +104,13 @@ const RecipeRating = ({ recipeId, recipeTitle }) => {
         {userRating > 0 && (
           <div className="mb-3">
             <p className="text-sm text-gray-700 mb-2">Your review:</p>
-            <p className="text-sm bg-white p-2 rounded border">{userReview || 'No review written yet.'}</p>
+            <p className="text-sm bg-white p-2 rounded border text-black">{userReview || 'No review written yet.'}</p>
           </div>
         )}
 
         <button
           onClick={() => setShowReviewForm(!showReviewForm)}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-sm"
+          className="px-4 py-2 bg-blue-600 text-black rounded hover:bg-blue-700 transition-colors text-sm"
         >
           {userRating > 0 ? 'Edit Review' : 'Write a Review'}
         </button>
@@ -119,7 +119,7 @@ const RecipeRating = ({ recipeId, recipeTitle }) => {
       {/* Review Form */}
       {showReviewForm && (
         <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-          <h4 className="font-medium mb-3">Write Your Review</h4>
+          <h4 className="font-medium mb-3 text-black">Write Your Review</h4>
           <div className="mb-3">
             <label className="block text-sm font-medium text-gray-700 mb-1">Rating:</label>
             <div className="flex items-center gap-1">
@@ -132,7 +132,7 @@ const RecipeRating = ({ recipeId, recipeTitle }) => {
               value={review}
               onChange={(e) => setReview(e.target.value)}
               placeholder="Share your thoughts about this recipe..."
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="3"
             />
           </div>
@@ -156,7 +156,7 @@ const RecipeRating = ({ recipeId, recipeTitle }) => {
       {/* All Reviews */}
       {allReviews.length > 0 && (
         <div>
-          <h4 className="font-medium mb-3">All Reviews</h4>
+          <h4 className="font-medium mb-3 text-black">All Reviews</h4>
           <div className="space-y-3 max-h-60 overflow-y-auto">
             {allReviews.map((review) => (
               <div key={review.id} className="p-3 bg-gray-50 rounded-lg">
@@ -168,7 +168,7 @@ const RecipeRating = ({ recipeId, recipeTitle }) => {
                   {renderStars(review.rating)}
                 </div>
                 {review.review && (
-                  <p className="text-sm text-gray-700">{review.review}</p>
+                  <p className="text-sm text-gray-700 text-black">{review.review}</p>
                 )}
               </div>
             ))}
