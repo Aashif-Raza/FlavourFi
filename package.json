@@ -13,7 +13,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mui/material": "^7.1.2",
+    "@mui/material": "^7.3.6",
     "@tailwindcss/vite": "^4.1.11",
     "autoprefixer": "^10.4.21",
     "dompurify": "^3.2.6",
